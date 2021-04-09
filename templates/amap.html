@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load static %}
+{% block explain_contents %}
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" .. ></script>
+    <script>
+    $(document).ready(function() {
+        iframedoc.body.innerHTML = "{{amap_html|safe}}"
+    });
+    </script>
+{% endblock explain_contents %}

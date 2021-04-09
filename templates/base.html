@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% load i18n static %}
+<html lang="ko">
+<head>
+ <meta charset="UTF-8">
+ <title>어린이 교통사고 분석</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    {% block header %}
+{% endblock header%}
+</head>
+<body>
+ <div id="sidebar"  class="container" >
+    {% block menu %}
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#"><i class="fa fa-child" aria-hidden="true"></i> 어린이 교통사고 <i class="fa fa-child" aria-hidden="true"></i></a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="/home"><i class="fa fa-home" aria-hidden="true"></i> 홈</a></li>
+              <li class="active"><a href="/list"><i class="fa fa-database" aria-hidden="true"></i> 전체 출력</a></li>
+              <li class="active"><a href="/show_pandas"><i class="fa fa-calendar" aria-hidden="true"></i> 연도 별 출력</a></li>
+              <li class="active"><a href="/a"><i class="fa fa-map-marker" aria-hidden="true"></i> 지도 출력</a></li>
+              <li class="active"><a href="/show_chart"><i class="fa fa-clock-o" aria-hidden="true"></i> 시간대 출력</a></li>
+              <li class="active"><a href="/show_att_vic"><i class="fa fa-car" aria-hidden="true"></i> 사고유형</a></li>
+              <li class="active"><a href="/show_casualties"><i class="fa fa-bar-chart" aria-hidden="true"></i> 시군별, 요일별 사고 </a></li>
+              <li class="active"><a href="/open_patients"><i class="fa fa-hospital-o" aria-hidden="true"></i> 환자유형</a></li>
+              <li class="active"><a href="/chart_law"><i class="fa fa-address-book-o" aria-hidden="true"></i> 가해자 법규 위반 </a></li>
+              <li class="active"><a href="/chart_road"><i class="fa fa-road" aria-hidden="true"></i> 도로형태 사고량 </a></li>
+                <li class="active"><a href="/carousel"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> 개선대책</a></li>
+              <li class="active">
+                  <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                      <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 교육사이트 <span class="caret"></span></a>
+                  <div class="dropdown-menu" style="background-color: #000000">
+                      <center><a href="https://www.youtube.com/watch?v=IRTbmWPtK3I" style="color:#FFF"> 안전 수칙 & 예방 동영상</a></center>
+                      <center><a href="https://www.youtube.com/watch?v=gAoF0Vxnk4A" style="color:#FFF"> 교통 안전 교육 동영상</a></center>
+                  </div>
+              </li>
+             </ul>
+          </div>
+        </nav>
+     <h1>-</h1>
+     <h1></h1>
+     <h1></h1>
+     {% endblock menu %}
+ </div>
+{% block title %}
+{% endblock title%}
+
+{%  block contents %}
+
+{% endblock contents%}
+
+{%  block explain_contents %}
+
+{% endblock explain_contents%}
+<center> <br>
+  <h3> 어린이 교통사고 분석 </h3></center>
+
+</body>
+</html>

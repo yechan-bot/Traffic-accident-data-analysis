@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+{% block explain_contents %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<center>
+    <body>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>발생년</th><th>발생시</th> <th>주야</th> <th>요일</th>
+            <th>발생지시도</th> <th>발생지시군</th> <th>사고유형대분류</th>
+            <th>가해자법규위반</th> <th>도로형태대분류</th> <th> &nbsp;  피해자</th>
+            <th>위도</th> <th> &nbsp;  경도</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for list in lists %}
+            <tr>
+                <td>{{list.발생년}}</td><td>{{list.발생시}}</td><td>{{list.주야}}</td><td>{{list.요일}}</td>
+                <td>{{list.발생지시도}}</td><td>{{list.발생지시군}}</td><td>{{list.사고유형_대분류}}</td>
+                <td>{{list.가해자법규위반}}</td><td> &nbsp; {{list.도로형태_대분류}}</td><td> &nbsp; {{list.피해자_당사자종별}}</td>
+                <td>{{list.위도}}</td><td> &nbsp; {{list.경도}}</td>
+
+            </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+        {% if lists.has_other_pages %}
+    <ul class = "pagination">
+        {% if lists.has_previous %}
+          <li><a href="?page={{ lists.previous_page_number }}">&laquo;</a></li>
+        {% else %}
+          <li class = "disabled"><span>&laquo;</span></li>
+        {% endif %}
+
+        {% for i in lists.paginator.page_range %}
+
+          {% if lists.number == i %}
+            <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+          {% else %}
+            <li><a href="?page={{ i }}">{{ i }}</a></li>
+          {% endif %}
+        {% endfor %}
+
+        {% if lists.has_next %}
+            <li><a href="?page={{ lists.next_page_number }}">&raquo;</a></li>
+        {% else %}
+            <li class="disabled"><span>&raquo;</span></li>
+        {%endif %}
+        </ul>
+    {%endif%}
+
+
+
+</body>
+</center>
+
+{% endblock explain_contents %}
